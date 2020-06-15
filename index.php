@@ -1,6 +1,6 @@
 <?php include "cabecalho.php"?>
 <?php
-$bd = new SQLite3("seriess.db");
+$bd = new SQLite3("series.db");
 $sql = "SELECT *FROM series";
 $rs = $bd->query($sql);
 $serie1=[
@@ -20,6 +20,7 @@ $serie3=[
   "nota"=>10,
   "sinopse"=>"When heroes alone are not enough ... the world needs legends. Having seen the future, one he will desperately try to prevent from happening, time-traveling rogue Rip Hunter is tasked with assembling a disparate group of both heroes and villains to confront an unstoppable threat — one in which not only is the planet at stake, but all of time itself. Can this ragtag team defeat an immortal threat unlike anything they have ever known?",
   "poster"=>"https://image.tmdb.org/t/p/original/eHs0PYBVGP3rv86UySmPOMf2b5F.jpg",
+  ];
 
 //$series=[$serie1,$serie2,$serie3];
 ?>
@@ -49,7 +50,7 @@ $serie3=[
   <!--primeiro card,ainda sera diminuido-->
   <div class="row">
   <?php 
-  while($serie=$series->fetchArray[]); ?>
+  while($serie=$series->fetchArray()): ?>
  <div class="col s3">
  <div class="card hoverable">
     <div class="card-image">
