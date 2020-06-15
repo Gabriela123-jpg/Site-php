@@ -1,9 +1,9 @@
 <?php
 $bd = new SQLite3("series.db");
-$sql= "DROP TABLE IF EXISTIS series";
+$sql= "DROP TABLE IF EXISTS series";
 if($bd-> exec($sql))
   echo"\ntabela apagada\n";
-$sql = "CREATE TABLE filmes(
+$sql = "CREATE TABLE series(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     titulo VARCHAR (200) NOT NULL,
     poster VARCHAR (200),
