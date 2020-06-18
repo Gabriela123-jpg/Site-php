@@ -50,7 +50,60 @@ if($bd->exec($sql))
    echo "\nseries inseridas com sucesso\n";
 else 
    echo"\nerro ao inserir series\n";
-
+   $sql ="INSERT INTO series (titulo,poster,sinopse,nota)VALUES(
+      'Once Upon a Time',
+      'https://image.tmdb.org/t/p/original/xo62QUB9d6yqt1RgTicdbWhgNQx.jpg',
+      'There is a town in Maine where every story book character you''ve ever known is trapped between two worlds, victims of a powerful curse. Only one knows the truth and only one can break the spell.''Emma Swan is a 28-year-old bail bonds collector who has been supporting herself since she was abandoned as a baby. Things change for her when her son Henry, whom she abandoned years ago, finds her and asks for her help explaining that she is from a different world where she is Snow White''s missing daughter.',
+      7.0
+      )";
+  if($bd->exec($sql))
+     echo "\nseries inseridas com sucesso\n";
+  else 
+     echo"\nerro ao inserir series\n";
+     $sql ="INSERT INTO series (titulo,poster,sinopse,nota)VALUES(
+      'One Day at Time',
+      'https://image.tmdb.org/t/p/original/cXINQ2NSORe0r55MRI8ziT2HHfU.jpg',
+      'In a reimagining of the TV classic, a newly single Latina mother raises her teen daughter and tween son with the help of her old-school mom.',
+      8.0
+      )";
+  if($bd->exec($sql))
+     echo "\nseries inseridas com sucesso\n";
+  else 
+     echo"\nerro ao inserir series\n";
+ 
+     $sql ="INSERT INTO series (titulo,poster,sinopse,nota)VALUES(
+      'O Mecanismo',
+      'https://image.tmdb.org/t/p/original/y0ZfBvOG99xqlPUDWqAdGfcdj1R.jpg',
+      'Marco Ruffo, é um delegado da Polícia Federal obcecado pelo caso que está investigando. Quando menos espera, ele e sua aprendiz, Verena Cardoni, já estão mergulhados em uma das maiores investigações de desvio e lavagem de dinheiro da história do Brasil.',
+      8.0
+      )";
+  if($bd->exec($sql))
+     echo "\nseries inseridas com sucesso\n";
+  else 
+     echo"\nerro ao inserir series\n";
+     
+     $sql ="INSERT INTO series (titulo,poster,sinopse,nota)VALUES(
+      'Orange is the New Black',
+      'https://image.tmdb.org/t/p/original/ekaa7YjGPTkFLcPhwWXTnARuCEU.jpg',
+      'A crime she committed in her youthful past sends Piper Chapman to a women''s prison, where she trades her comfortable New York life for one of unexpected camaraderie and conflict in an eccentric group of fellow inmates.',
+      5.5
+      )";
+  if($bd->exec($sql))
+     echo "\nseries inseridas com sucesso\n";
+  else 
+     echo"\nerro ao inserir series\n";
+     
+     $sql ="INSERT INTO series (titulo,poster,sinopse,nota)VALUES(
+      'Orphan Black',
+      'https://image.tmdb.org/t/p/original/7hQKcjsYPnNGhxE7JGp2o4sTuPr.jpg',
+      'A streetwise hustler is pulled into a compelling conspiracy after witnessing the suicide of a girl who looks just like her.',
+      8.0
+      )";
+  if($bd->exec($sql))
+     echo "\nseries inseridas com sucesso\n";
+  else 
+     echo"\nerro ao inserir series\n";     
+  
 
 
 
