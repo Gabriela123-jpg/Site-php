@@ -2,7 +2,8 @@
 <?php
 $bd = new SQLite3("series.db");
 $sql = "SELECT *FROM series";
-$rs = $bd->query($sql);
+$series = $bd->query($sql);
+
 $serie1=[
   "titulo"=>"L.A Finest",
   "nota"=>10,
@@ -50,9 +51,9 @@ $serie3=[
   <!--primeiro card,ainda sera diminuido-->
   <div class="row">
   <?php 
-  while($serie=$series->fetchArray()): ?>
- <div class="col s3">
- <div class="card hoverable">
+  while($serie =$series->fetchArray()): ?>
+   <div class="col s3">
+   <div class="card hoverable">
     <div class="card-image">
       <img src="<?=$serie["poster"]?>">
       
@@ -61,13 +62,13 @@ $serie3=[
     </div>
     <div class="card-content">
     <p class="valign-wrapper">
-    <p> <i class="material-icons yellow-text">star</i><?=$serie["notas"]?></p>
+    <p> <i class="material-icons yellow-text">star</i><?=$serie["nota"]?></p>
     <span class="card-title"><?=$serie["titulo"]?></span>
       <p><?=$serie["sinopse"]?></p>
     </div>
   </div>
-  <?php endwhile ?>
-  </div>
+    </div>
+    <?php endwhile ?>
    </div>
    
 
