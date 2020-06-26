@@ -3,7 +3,7 @@ require "conexao.php";
 class SeriesRepositoryPDO{
 
     private $conexao;
-    public function construct(){
+    public function __construct(){
      $this->conexao = Conexao::criar();
     }
     
@@ -21,10 +21,10 @@ class SeriesRepositoryPDO{
 $sql ="INSERT INTO series (titulo,poster,sinopse,nota)
 VALUES (:titulo, :poster,:sinopse,:nota)";
 $stmt = $this->conexao->prepare($sql);
-$stmt->bindValue(':titulo',$serie->titulo, SQLITE3_TEXT);
-$stmt->bindValue(':sinopse',$serie->sinopse, SQLITE3_TEXT);
-$stmt->bindValue(':nota',$serie->nota, SQLITE3_FLOAT);
-$stmt->bindValue(':poster',$serie->poster, SQLITE3_TEXT);
+$stmt->bindValue(':titulo',$serie->titulo, PDO::PARAM_STR);
+$stmt->bindValue(':sinopse',$serie->sinopse, PDO::PARAM_STR);
+$stmt->bindValue(':nota',$serie->nota, PDO::PARAM_STR);
+$stmt->bindValue(':poster',$serie->poster, PDO:: PARAM_STR);
 return $stmt->execute();       
 
     }

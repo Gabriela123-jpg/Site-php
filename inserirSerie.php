@@ -1,19 +1,19 @@
 <?php
+session_start();
+require "./repository/SeriesRepositoryPDO.php";
+require "./repository/serie.php";
+$seriesRepository= new SeriesRepositoryPDO();
+$serie= new Serie();
 
-$bd = new SQLite3("series.db");
+$serie->titulo =$_POST["titulo"];
+$serie->sinopse = $_POST["sinopse"];
+$serie->nota = $_POST["nota"];
+$serie->poster =$_POST["poster"];
 
-$titulo   =$bd->escapeString($_POST["titulo"]);
-$sinopse  =$bd->escapeString($_POST["sinopse"]);
-$nota     = $bd->escapeString($_POST["nota"]);
-$poster   =$bd->escapeString($_POST["poster"]);
-
-
-
-
-if($stmt->execute())
-   echo "\nseries inseridas com sucesso\n";
+if($seriesRepository->salvar($serie))
+  $_SESSION["msg"] = "Serie cadastrada com sucesso";
 else 
-   echo"\nerro ao inserir series.". $bd->lastErrorMsg();
+$_SESSION["msg"] ="Erro ao inserir serie";
    
-header("Location:index.php?msg=Filme+cadastrado+com+sucesso");
+header("Location:index.php");
 ?>

@@ -1,10 +1,12 @@
 <?php include "cabecalho.php"?>
 <?php
+session_start();
 
 require "./repository/SeriesRepositoryPDO.php";
-
+require "./util/mensagem.php";
 $seriesRepository = new SeriesRepositoryPDO();
 $series = $seriesRepository->listarTodos();
+
 ?>
 <body>
 
@@ -51,14 +53,8 @@ $series = $seriesRepository->listarTodos();
      <?php endforeach ?>
    </div>
    </div>
-
+<?= Mensagem::mostrar();?>
 
 </body>
-<?php if(isset($GET["msg"])); ?>
-<script>
-M.toast({
-  html:'<?= $_GET["msg"]?>'
-})
-</script>
 
 </html>
