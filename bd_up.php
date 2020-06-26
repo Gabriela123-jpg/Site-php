@@ -53,7 +53,7 @@ else
    $sql ="INSERT INTO series (titulo,poster,sinopse,nota)VALUES(
       'Once Upon a Time',
       'https://image.tmdb.org/t/p/original/xo62QUB9d6yqt1RgTicdbWhgNQx.jpg',
-      'There is a town in Maine where every story book character you''ve ever known is trapped between two worlds, victims of a powerful curse. Only one knows the truth and only one can break the spell.''Emma Swan is a 28-year-old bail bonds collector who has been supporting herself since she was abandoned as a baby. Things change for her when her son Henry, whom she abandoned years ago, finds her and asks for her help explaining that she is from a different world where she is Snow White''s missing daughter.',
+      'There is a town in Maine where every story book character you''ve ever known is trapped between two worlds, victims of a powerful curse. Only one knows the truth and only one can break the spell.',
       7.0
       )";
   if($bd->exec($sql))

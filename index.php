@@ -1,16 +1,15 @@
 <?php include "cabecalho.php"?>
 <?php
-$bd = new SQLite3("series.db");
-$sql = "SELECT *FROM series";
-$series = $bd->query($sql);
 
-//$series=[$serie1,$serie2,$serie3];
+require "./repository/SeriesRepositoryPDO.php";
+
+$seriesRepository = new SeriesRepositoryPDO();
+$series = $seriesRepository->listarTodos();
 ?>
 <body>
 
 <nav id="menu" class="nav-extended" >
-    <div class="nav-wrapper">
-    
+    <div class="nav-wrapper"> 
   <a class="brand-logo center"><h1>Ursal</h1></a>  
       <ul id="nav-mobile" class="right ">
       
@@ -29,30 +28,37 @@ $series = $bd->query($sql);
       </ul>
     </div>
   </nav>
+  <div class="container">
   <!--primeiro card,ainda sera diminuido-->
   <div class="row">
-  <?php 
-  while($serie =$series->fetchArray()): ?>
-   <div class="col s3">
+  <?php foreach($series as $serie): ?>
+   <div class="col s12 m6 l4">
    <div class="card hoverable">
     <div class="card-image">
-      <img src="<?=$serie["poster"]?>">
+      <img src="<?=$serie->poster?>">
       
       <a class="btn-floating halfway-fab waves-effect waves-light red">
       <i class="material-icons">favorite_border</i></a>
     </div>
     <div class="card-content">
     <p class="valign-wrapper">
-    <p> <i class="material-icons yellow-text">star</i><?=$serie["nota"]?></p>
-    <span class="card-title"><?=$serie["titulo"]?></span>
-      <p><?=$serie["sinopse"]?></p>
+    <p> <i class="material-icons yellow-text">star</i><?=$serie->nota?></p>
+    <span class="card-title"><?= $serie->titulo?></span>
+      <p><?=$serie->sinopse?></p>
     </div>
   </div>
     </div>
-    <?php endwhile ?>
+     <?php endforeach ?>
    </div>
-   
+   </div>
 
 
 </body>
+<?php if(isset($GET["msg"])); ?>
+<script>
+M.toast({
+  html:'<?= $_GET["msg"]?>'
+})
+</script>
+
 </html>
