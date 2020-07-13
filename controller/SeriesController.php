@@ -33,12 +33,16 @@ private function savePoster($file){
   $posterDir = "imagens/posters/";
   $posterPath = $posterDir . basename($file["poster_file"]["name"]);
   $posterTmp = $file["poster_file"]["tmp_name"];
-    
+  if (move_uploaded_file($posterTmp, $posterPath)){
+    return $posterPath;
+} else {
+    return false;
+}
   }
 
   public function favorite(int $id){
     $seriesRepository = new SeriesRepositoryPDO();
-    $result=['success'=>$seriesRepository ->favortirar($id)];
+    $result=['success'=>$seriesRepository->favoritar($id)];
    
     header('Content-type:application/json');
    echo json_encode($result);
