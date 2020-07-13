@@ -1,7 +1,7 @@
 <?php 
 class Mensagem{
     public function mostrar(){
-        session_start();
+     session_start();
             if (isset($_SESSION["msg"])){
                 $msg= $_SESSION["msg"];
                 unset($_SESSION["msg"]);

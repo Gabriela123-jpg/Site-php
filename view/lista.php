@@ -9,8 +9,8 @@
             </a>
 
             <ul id="nav-mobile" class="right ">
-                <li><a class="active" href="index.php">Galeria</a></li>
-                <li><a class="active" href="lista.php">Cadastre</a></li>
+                <li><a class="active" href="/">Galeria</a></li>
+                <li><a class="active" href="/novo">Cadastre</a></li>
             </ul>
         </div>
         <div class="nav-content">
@@ -24,7 +24,7 @@
     </nav>
 
     <div class="row">
-    <form action="inserirSerie.php" method="POST">
+    <form  method="POST" ectype="multipart/form-data">
         <div class="col s6 offset-s3">
             <div class="card">
                 <div class="card-content">
@@ -55,7 +55,7 @@
                     <div class="file-field input-field">
                         <div class="btn red light-4 black-text">
                             <span>Poster</span>
-                            <input type="file">
+                            <input type="file" name="poster_file">
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text"  name="poster">
@@ -63,7 +63,7 @@
                     </div>
 
                     <div class="card-action">
-                        <a class="btn waves-effect waves-light  grey" href="index.php">Voltar</a>
+                        <a class="btn waves-effect waves-light  grey" href="/">Voltar</a>
                         <button type="submit" class="waves-effect waves-light btn red">Cadastrar</button>
                     </div>
                 </div>
