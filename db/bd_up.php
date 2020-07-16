@@ -1,12 +1,12 @@
 <?php
 $bd = new SQLite3("series.db");
 $sql= "DROP TABLE IF EXISTS series";
-$limitar=mb_strimwidth( 0, 45, "...");
+
 if($bd-> exec($sql))
   echo"\ntabela apagada\n";
 
 $sql = "CREATE TABLE series (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR (200) NOT NULL,
     poster VARCHAR (200),
     sinopse TEXT,
