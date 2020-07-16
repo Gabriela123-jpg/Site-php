@@ -13,7 +13,7 @@ class SeriesRepositoryPDO{
 
         $sql = "SELECT * FROM series";
         $series = $this->conexao->query($sql);
-        if(!$series) return false;
+     ///   if(!$series) return false;
        
         while($serie = $series->fetchObject()){
             array_push($seriesLista, $serie);
