@@ -21,7 +21,7 @@ exit();
 }
  if(substr($rota, 0,strlen("/favoritar")) === "/favoritar"){
         $controller= new SeriesController();
-        $controller->favoritar(basename($rota));
+        $controller->favorite(basename($rota));
     
    exit();
 }
