@@ -1,17 +1,17 @@
 <?php
-class serie{
+class Serie{
   /** @var int id */
-    public$id;
+    public $id;
 
  /** @var string titulo */
-    public$titulo;
+    public $titulo;
 
  /** @var string sinopse */
-    public$sinopse;
+    public $sinopse;
     
      /** @var float nota */
-    public$nota;
+    public $nota;
 
      /** @var string poster */
-    public$poster;
+    public $poster;
 }
