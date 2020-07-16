@@ -13,7 +13,7 @@ class SeriesController{
   public function save($request){
     
 $seriesRepository= new SeriesRepositoryPDO();
-$serie= (object) $request;
+$serie = (object) $request;
 
 $upload= $this->savePoster($_FILES);
 
@@ -26,7 +26,7 @@ if($seriesRepository->salvar($serie))
 else 
 $_SESSION["msg"] ="Erro ao inserir serie";
    
-header("Location:/");
+header("Location: / ");
 
 }
 private function savePoster($file){
