@@ -25,4 +25,12 @@ exit();
     
    exit();
 }
+if(substr($rota, 0,strlen("/series")) === "/series"){
+   if($metodo === "GET") require "view/first.php";
+   if($metodo === "DELETE"){
+    $controller= new SeriesController();
+    $controller->delete(basename($rota));
+   }
+    exit();
+}
 require "view/404.php";

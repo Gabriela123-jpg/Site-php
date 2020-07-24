@@ -42,4 +42,14 @@ $stmt->bindValue(':poster',$serie->poster, PDO:: PARAM_STR);
                 return"Erro";
         }
     }
+    public function delete(int $id){
+        $sql ="DELETE FROM series WHERE id =:id";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+            if($stmt->execute()){
+                  return "ok";
+            }else{
+                return"Erro";
+        }
+    }
 }

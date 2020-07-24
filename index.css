@@ -10,3 +10,7 @@ body{
     text-shadow: 2px 2px 15px #ee0d0d;
 
  }
+ .fadeOut{
+     opacity:0;
+     transition:2s;
+ }

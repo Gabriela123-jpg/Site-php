@@ -16,7 +16,7 @@ $series = $controller->index();
 
                     <li><a class="active"><a href="/">Galeria</a></li>
                     <li><a class="active" href="/novo">Cadastre</a></li>
-                    <div class="nav-content">
+                   <!-- <div class="nav-content">-->
                 </ul>
         </div>
 
@@ -34,24 +34,29 @@ $series = $controller->index();
         <div class="row">
 
             <?php foreach($series as $serie): ?>
-            <div class="col s12 m6 l3">
-                <div class="card hoverable">
+            <div class="col s7 m4 xl3">
+                <div class="card hoverable card-serie">
                     <div class="card-image">
-                        <img src="<?=$serie->poster?>">
-
-                        <button class="btn-fav btn-floating halfway-fab waves-effect waves-light red"
-                            data-id="<?=$serie->id ?>">
+                    <img src="<?= $serie->poster?>" class="activator"/>
+                       
+                        <button class="btn-fav btn-floating halfway-fab waves-effect waves-light red"   data-id="<?=$serie->id ?>">
                             <i class="material-icons"><?=($serie->favorito) ?"favorite":"favorite_border"?></i></button>
                     </div>
                     <div class="card-content">
                         <p class="valign-wrapper">
                             <p> <i class="material-icons yellow-text">star</i><?=$serie->nota?></p>
-                            <span class="card-title"><?= $serie->titulo?></span>
-                            <p><?=$serie->sinopse?></p>
+                            <span class="card-title activar truncate">
+                            <?= $serie->titulo?></span>
+                           <!--<p>--><!--?=$serie->sinopse?></p>-->
                     </div>
+                    <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"><?= $serie->titulo ?><i class="material-icons right">close</i></span>
+              <p><?= substr($serie->sinopse, 0, 200) . "..." ?></p>
+              <button class="waves-effect waves-light btn-small right red accent-2 btn-delete" data-id="<?= $serie->id ?>"><i class="material-icons">delete</i></button>
                 </div>
             </div>
-            <?php endforeach ?>
+            </div>
+                <?php endforeach ?>
         </div>
     </div>
     <?= Mensagem::mostrar();?>
@@ -73,6 +78,27 @@ $series = $controller->index();
         })
         .catch( error => {
           M.toast({html: 'Erro ao favoritar'})
+        })
+
+      });
+    });
+    document.querySelectorAll(".btn-delete").forEach(btn => {
+      btn.addEventListener("click", e => {
+        const id = btn.getAttribute("data-id")
+        const requestConfig= {method: "DELETE" , header: new Headers()}
+        fetch(`/series/${id}`,requestConfig)
+        .then(response => response.json())
+        .then(response => {
+          if (response.success === "ok") {
+            const card =  btn.closest(".col")
+           card.calssList.add("fadeOut")
+            setTimeout(()=>card.remove(),1000)
+            
+            }
+          }
+        })
+        .catch( error => {
+          M.toast({html: 'Erro ao deletar'})
         })
 
       });
