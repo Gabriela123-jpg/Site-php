@@ -47,7 +47,7 @@ $series = $controller->index();
                             <p> <i class="material-icons yellow-text">star</i><?=$serie->nota?></p>
                             <span class="card-title activar truncate">
                             <?= $serie->titulo?></span>
-                           <!--<p>--><!--?=$serie->sinopse?></p>-->
+                         
                     </div>
                     <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4"><?= $serie->titulo ?><i class="material-icons right">close</i></span>
