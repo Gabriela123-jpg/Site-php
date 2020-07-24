@@ -59,6 +59,7 @@ $series = $controller->index();
                 <?php endforeach ?>
         </div>
     </div>
+    </div>
     <?= Mensagem::mostrar();?>
 
     <script>
