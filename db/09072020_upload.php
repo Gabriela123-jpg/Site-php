@@ -1,5 +1,5 @@
 <?php
-$bd = new mysql("./db/series.db");
+$bd = new SQLite3("./db/series.db");
 $sql= "ALTER TABLE series ADD COLUMN favorito INT DEFAULT 0 ";
 
 if($bd-> exec($sql))
