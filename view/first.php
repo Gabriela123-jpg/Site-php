@@ -51,7 +51,7 @@ $series = $controller->index();
                     </div>
                     <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4"><?= $serie->titulo ?><i class="material-icons right">close</i></span>
-              <p><?= substr($serie->sinopse, 0, 200) . "..." ?></p>
+              <p><?= substr($serie->sinopse, 0, 500) . "..." ?></p>
               <button class="waves-effect waves-light btn-small right red accent-2 btn-delete" data-id="<?= $serie->id ?>"><i class="material-icons">delete</i></button>
                 </div>
             </div>

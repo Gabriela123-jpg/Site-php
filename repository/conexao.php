@@ -1,7 +1,7 @@
 <?php
 class Conexao{
     public static function criar():PDO{
-        $env = parse_ini_file('.env');
+        $env = (parse_ini_file('.env')) ? parse_ini_file('.env') : getenv();
       $databaseType = $env["databasetype"];
       $database= $env["database"];
       $server = $env["server"];
