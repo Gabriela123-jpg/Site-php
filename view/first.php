@@ -15,7 +15,7 @@ $series = $controller->index();
                 <ul id="nav-mobile" class="right ">
 
                     <li><a class="active"><a href="/">Galeria</a></li>
-                    <li><a class="active" href="/novo">Cadastre</a></li>
+                    <li><a class="active" href="/cadastre">Cadastre</a></li>
                    <!-- <div class="nav-content">-->
                 </ul>
         </div>

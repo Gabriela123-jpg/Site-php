@@ -10,7 +10,7 @@
 
             <ul id="nav-mobile" class="right ">
                 <li><a class="active" href="/">Galeria</a></li>
-                <li><a class="active" href="/novo">Cadastre</a></li>
+                <li><a class="active" href="/cadastre">Cadastre</a></li>
             </ul>
         </div>
         <div class="nav-content">

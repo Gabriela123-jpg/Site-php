@@ -11,7 +11,7 @@ if ($rota === "/") {
     exit();
 }
     
-if($rota ==="/novo"){
+if($rota ==="/cadastre"){
 if($metodo == "GET")require "view/lista.php";
 if ($metodo =="POST") {
     $controller = new SeriesController();
