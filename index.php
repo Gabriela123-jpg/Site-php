@@ -17,16 +17,16 @@ if ($metodo =="POST") {
     $controller = new SeriesController();
     $controller->save($_REQUEST);
     };
-exit();
+    exit();
 }
  if(substr($rota, 0,strlen("/favoritar")) === "/favoritar"){
-        $controller= new SeriesController();
+        $controller = new SeriesController();
         $controller->favorite(basename($rota));
    exit();
 }
 if(substr($rota, 0,strlen("/series")) === "/series"){
-   if($metodo === "GET") require "view/first.php";
-   if($metodo === "DELETE"){
+   if($metodo == "GET") require "view/first.php";
+   if($metodo == "DELETE"){
     $controller= new SeriesController();
     $controller->delete(basename($rota));
    }

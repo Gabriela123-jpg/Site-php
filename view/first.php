@@ -83,6 +83,7 @@ $series = $controller->index();
 
       });
     });
+
     document.querySelectorAll(".btn-delete").forEach(btn => {
       btn.addEventListener("click", e => {
         const id = btn.getAttribute("data-id")
@@ -92,14 +93,13 @@ $series = $controller->index();
         .then(response => {
           if (response.success === "ok") {
             const card =  btn.closest(".col")
-           card.calssList.add("fadeOut")
+           card.classList.add("fadeOut")
             setTimeout(()=>card.remove(),1000)
-            
             }
-          }
         })
         .catch( error => {
-          M.toast({html: 'Erro ao deletar'})
+          M.toast({html: 'Erro ao deletar'
+          })
         })
 
       });
