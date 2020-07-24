@@ -11,7 +11,7 @@ $sql = "CREATE TABLE series (
     poster VARCHAR (200),
     sinopse TEXT,
     nota DECIMAL(3,1),
-   favorito INT DEFAULT 0
+   
     )
 ";
 
