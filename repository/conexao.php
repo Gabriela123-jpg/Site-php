@@ -8,7 +8,7 @@ class Conexao{
       $pass = $env["pass"];
       $user = $env["user"];
   
-        if($databaseType === "sqlite"){
+        if($databaseType === "mysql"){
           $database = "host=$server;dbname=$database";
         }
        return new PDO("$databaseType:$database", $user, $pass);
